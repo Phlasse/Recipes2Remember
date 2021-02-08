@@ -60,5 +60,19 @@ pypi_test:
 pypi:
 	@twine upload dist/* -u $(PYPI_USERNAME)
 
-run_streamlit:
-    streamlit run r2r_app.py
+# ----------------------------------
+#         HEROKU COMMANDS
+# ----------------------------------
+APP_NAME=recipes2remember
+streamlit:
+	-@streamlit run app_streamlit.py
+
+heroku_login:
+	-@heroku login
+
+heroku_create_app:
+	-@heroku create ${APP_NAME}
+
+deploy_heroku:
+	-@git push heroku master
+	-@heroku ps:scale web=1
