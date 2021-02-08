@@ -10,9 +10,9 @@ check_code:
 black:
 	@black scripts/* Recipes2Remember/*.py
 
-test:
-	@coverage run -m pytest tests/*.py
-	@coverage report -m --omit=$(VIRTUAL_ENV)/lib/python*
+#test:
+#	@coverage run -m pytest tests/*.py
+#	@coverage report -m --omit=$(VIRTUAL_ENV)/lib/python*
 
 ftest:
 	@Write me
